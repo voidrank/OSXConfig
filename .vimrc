@@ -6,6 +6,7 @@ set ts=4
 set expandtab
 set sw=4
 colorscheme monokai
+set term=xterm-256color
 
 map <F9> :! g++ % -g -o %<<cr>
 map <F3> :NERDTreeToggle<cr>
@@ -26,8 +27,6 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -35,12 +34,18 @@ Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-Plugin 'user/L9', {'name': 'newL9'}
 " NERDTree
 Plugin 'the-nerd-tree'
 " auto complete
 Plugin 'neocomplcache' 
+
+Bundle 'klen/python-mode'
+
+" pymode-folder
+let g:pymode_folding = 0
+" pymode jump-to-definition
+let g:pymode_rope_goto_definition_bind = '<C-c>g'
+let g:pymode_rope_goto_definition_cmd = 'new'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,3 +61,13 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"
+" Comnent
+if has("gui_running")
+    "colorscheme default        " It doesn't matter whether you comment this or not
+    :
+else
+    colorscheme desert         " I'd like to use modified desert scheme instead 
+                                    " of the default one, in the CLI mode of
+                                    " course;-)
+endif
