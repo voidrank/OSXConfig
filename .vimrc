@@ -9,7 +9,6 @@ colorscheme monokai
 set term=xterm-256color
 
 map <F9> :! g++ % -g -o %<<cr>
-map <F3> :NERDTreeToggle<cr>
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -36,6 +35,8 @@ Plugin 'file:///home/gmarik/path/to/plugin'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " NERDTree
 Plugin 'the-nerd-tree'
+map <F4> :NERDTree<cr>
+map <F3> :NERDTreeToggle<cr>
 " auto complete
 Plugin 'neocomplcache' 
 
