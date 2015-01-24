@@ -3,7 +3,7 @@ syntax on
 set ai
 set smartindent
 set ts=4
-set expandtab
+set noexpandtab
 set sw=4
 colorscheme monokai
 set term=xterm-256color
@@ -13,10 +13,12 @@ map <F9> :! g++ % -g -o %<<cr>
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
+"alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
@@ -26,19 +28,26 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
+"
 " git repos on your local machine (i.e. when working on your own plugin)
 Plugin 'file:///home/gmarik/path/to/plugin'
+
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
 " NERDTree
 Plugin 'the-nerd-tree'
 map <F4> :NERDTree<cr>
 map <F3> :NERDTreeToggle<cr>
+
 " auto complete
-Plugin 'neocomplcache' 
+Bundle 'neocomplcache' 
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_auto_select = 1
 
 Bundle 'klen/python-mode'
 
@@ -47,6 +56,8 @@ let g:pymode_folding = 0
 " pymode jump-to-definition
 let g:pymode_rope_goto_definition_bind = '<C-c>g'
 let g:pymode_rope_goto_definition_cmd = 'new'
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,8 +73,10 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"
-" Comnent
+
+
+
+" Comnent colorscheme set
 if has("gui_running")
     "colorscheme default        " It doesn't matter whether you comment this or not
     :
