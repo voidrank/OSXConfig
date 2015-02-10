@@ -2,9 +2,13 @@ set nu
 syntax on
 set ai
 set smartindent
-set ts=4
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set sw=4
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set ts=4
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set sts=4
+autocmd FileType javascript,html,css,xml set sw=2
+autocmd FileType javascript,html,css,xml set ts=2
+autocmd FileType javascript,html,css,xml set sts=2
 set noexpandtab
-set sw=4
 colorscheme monokai
 set term=xterm-256color
 
@@ -22,25 +26,25 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Bundle 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+Bundle 'git://git.wincent.com/command-t.git'
 "
 " git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
+Bundle 'file:///home/gmarik/path/to/plugin'
 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " NERDTree
-Plugin 'the-nerd-tree'
+Bundle 'the-nerd-tree'
 map <F4> :NERDTree<cr>
 map <F3> :NERDTreeToggle<cr>
 
@@ -57,7 +61,8 @@ let g:pymode_folding = 0
 let g:pymode_rope_goto_definition_bind = '<C-c>g'
 let g:pymode_rope_goto_definition_cmd = 'new'
 
-
+" django html
+Bundle 'vim-htmldjango_omnicomplete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
