@@ -8,7 +8,7 @@ autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set sts=4
 autocmd FileType javascript,html,css,xml set sw=2
 autocmd FileType javascript,html,css,xml set ts=2
 autocmd FileType javascript,html,css,xml set sts=2
-set noexpandtab
+set expandtab
 colorscheme monokai
 set term=xterm-256color
 
@@ -63,6 +63,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 4
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 let g:syntastic_python_checkers = ["pyflakes"]
 
