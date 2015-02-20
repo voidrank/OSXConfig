@@ -37,7 +37,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'git://git.wincent.com/command-t.git'
 "
 " git repos on your local machine (i.e. when working on your own plugin)
-Bundle 'file:///home/gmarik/path/to/plugin'
+" Bundle 'file:///home/gmarik/path/to/plugin'
 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
@@ -53,16 +53,28 @@ Bundle 'neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_auto_select = 1
 
-Bundle 'klen/python-mode'
+" syntastic 
+Bundle 'syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" pymode-folder
-let g:pymode_folding = 0
-" pymode jump-to-definition
-let g:pymode_rope_goto_definition_bind = '<C-c>g'
-let g:pymode_rope_goto_definition_cmd = 'new'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+let g:syntastic_python_checkers = ["pyflakes"]
 
 " django html
 Bundle 'vim-htmldjango_omnicomplete'
+
+" django vim
+Bundle 'vim_django'
+
+" cpp.vim
+Bundle 'cpp.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
