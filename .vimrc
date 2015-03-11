@@ -5,19 +5,20 @@ set smartindent
 autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set sw=4
 autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set ts=4
 autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set sts=4
-autocmd FileType javascript,html,css,xml set sw=2
-autocmd FileType javascript,html,css,xml set ts=2
-autocmd FileType javascript,html,css,xml set sts=2
+autocmd FileType javascript,html,htmldjango,css,xml set sw=2
+autocmd FileType javascript,html,htmldjango,css,xml set ts=2
+autocmd FileType javascript,html,htmldjango,css,xml set sts=2
 set expandtab
 colorscheme monokai
 set term=xterm-256color
+set stal=2
 
 map <F9> :! g++ % -g -o %<<cr>
 
+
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -63,19 +64,17 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 4
+let g:syntastic_loc_list_height = 2
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
-let g:syntastic_python_checkers = ["pyflakes"]
+let g:syntastic_python_checkers = ["flake8"]
+let g:syntastic_python_flake8_args='--ignore=F403,E501'
+let g:syntastic_html_checkers=['']
 
-" django html
-Bundle 'vim-htmldjango_omnicomplete'
+" passive mode
+let g:syntastic_mode_map = {"passive_filetypes":['htmldjango', 'html', 'javascript', 'vim', 'css']}
 
-" django vim
-Bundle 'vim_django'
-
-" cpp.vim
-Bundle 'cpp.vim'
-
+" python indent
+Plugin 'hynek/vim-python-pep8-indent'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

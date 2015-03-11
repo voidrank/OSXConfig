@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/apple/.config'
 let g:netrw_dirhist_2='/Users/apple/.vim'
 let g:netrw_dirhist_3='/Users/apple/project/ASA.tv/.git'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/Users/apple/project/ASA.tv/src/ASA/video_cms'
 let g:netrw_dirhist_5='/Users/apple/.vim'
 let g:netrw_dirhist_6='/Users/apple/demo/angular-phonecat/app'
 let g:netrw_dirhist_7='/Users/apple/project/ASA.tv/src/ASA/video_cms'
+let g:netrw_dirhist_8='/Users/apple/project/ASA.tv/.git'
